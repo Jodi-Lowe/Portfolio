@@ -1,11 +1,7 @@
 /* =============================================================================
   BOX SIZING
 ============================================================================= */
-*,
-*::before,
-*::after {
-  //box-sizing: border-box;
-}
+
 
 /* =============================================================================
   HTML & BODY
@@ -22,6 +18,19 @@ body {
   font-family: 'Julius Sans One', sans-serif;
 
 }
+.thank_you{
+background-color: #F73251;
+}
+.thank_you h1,h2{
+color: #fff;
+font-size: 4em;
+}
+.thank_you a{
+color: #fff;
+}
+.thank_you a:hover{
+color: ##00C79B;
+}
 /* =============================================================================
    THE GRID
 ============================================================================= */
@@ -31,8 +40,6 @@ body {
 .wrapper {
 	width: 100%;
 	border-collapse: collapse;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0 0 4%;
 	margin: 4% 0 0;
@@ -56,8 +63,6 @@ body .wrapper:first-child {
 	float: left;
 	width: 100%;
 	border-collapse:collapse;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	word-break: break-word;
 	margin: 4% 0 0;
@@ -100,7 +105,6 @@ body .wrapper:first-child {
 	}
 	.row {
 		display: -webkit-box;
-		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
@@ -165,7 +169,6 @@ html, body {
 .flexGRID .row .col_10,
 .flexGRID .row .col_11,
 .flexGRID .row .col_12 {
-	//background: #FFF;
 	border-radius: 2px;
 }
 .flexGRID .row:first-child .col_12 {
@@ -206,10 +209,12 @@ h6 {
 h4.custom-heading{
     font-size: 2em;
 }
-
+p{
+	font-size: 1em !important;
+}
 /***-----HEADER-----***/
-#header{
-    background-color: #333;
+header{
+    background-color: #212121;
     position: fixed;
     top: 0;
     color: #fff;
@@ -223,24 +228,30 @@ h4.custom-heading{
     background: url('images/background3.jpg') no-repeat center;
     background-size: cover;
     background-position: 50% 50%;
-    height: 700px;
+    height: 650px;
 }
-#header-image h2{
-    font-family: 'Antic', sans-serif;
+#header-image .row:first-child{
+	position: relative;
+}
+#header-image .row:first-child h2{
+	font-family: 'Antic', sans-serif;
     position: absolute;
-    top: 20%;
+    top: 500%;
     left: 0;
     font-size: 2em; 
     color: #fff;
-    text-align: center;
+    text-align: left;
     padding: 12%;
+    line-height: 1.3em;
 }
-#header .row{
+header .row{
     max-width: 100%;
+	top: 0;
+    margin-top: 0;
 }
 /***-----ABOUT-----***/
 #about_section{
-    background-color: #00C79B;
+    background-color: #06a884;
 }
 #about_section .row{
     padding: 0;
@@ -248,20 +259,23 @@ h4.custom-heading{
 }
 #about_section p{
     padding: 5%;
-    text-align: center;
+    text-align: left;
+    line-height: 1.5em;
     color: #fff;
 }
 #about_section h4{
     color: #fff;
 }
-
 #about_image{
-    background-image: url('images/blueholejamaica.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('images/officespace3.jpg');
     background-position: 50% 50%;
     background-size: cover;
-    height: 500px;
+    height: 300px;
     padding: 0;
     margin: 0;
+}
+.slide{
+	justify-content: center;
 }
 /***-----PORTFOLIO-----***/
 
@@ -270,6 +284,10 @@ h4.custom-heading{
 }
 .portfolio p{
     text-align: center;
+    line-height: 1.5em;
+}
+.portfolio a:hover{
+	cursor: crosshair;
 }
 /***-----SERVICES-----***/
 #what_i_do{
@@ -280,11 +298,15 @@ h4.custom-heading{
     margin-left: 33%;
 }
 #what_i_do p{
-    text-align: center;
+    text-align: left;
+    line-height: 1.6em;
+}
+#what_i_do h3{
+	font-size: 1.5em;
 }
 /***-----FOOTER-----***/
 footer{
-    background: #212121;
+    background-color: #212121;
     color: #eee;
     padding: 0;
     margin: 0;
@@ -297,42 +319,49 @@ footer p{
     text-align: left;
     color: #fff;
 }
+footer .row{
+	background-color: #212121;
+}
 .copyright{
-    border-top: 1px solid #333;
+    border-top: 1px solid #171515;
     color:#555;
-    background: #212121;
+    background: #1B1A1A;
     padding: 0.5%;
     margin: 0;
     text-align: center;
     
 }
-@media screen and (min-width: 480px) and (max-width: 767px) {
- #header-image h2{
-    font-family: 'Antic', sans-serif;
+@media screen and (min-width: 480px) and (max-width: 767px) {    
+#header-image .row:first-child h2{
+	font-family: 'Antic', sans-serif;
     position: absolute;
-    top: 15%;
+    top: 13%;
     left: 0;
     font-size: 2em; 
     color: #fff;
-    text-align: center;
-    padding: 10%;
-}    
+    text-align: left;
+    padding: 12%;
+    line-height: 1.3em;
+}
 /***-----SERVICES-----***/    
     #what_i_do img{
     margin-left: 42%;
 }
+ #what_i_do p{
+	   text-align: left;
+   }
 }
 @media screen and (min-width: 768px) {
-    #header-image h2{
-    font-family: 'Antic', sans-serif;
+#header-image .row:first-child h2{
+	font-family: 'Antic', sans-serif;
     position: absolute;
-    top: 15%;
-    left: 15%;
-    font-size: 3em; 
+    top: 10%;
+    left: 0;
+    font-size: 2em; 
     color: #fff;
-    line-height: 1.4em;
     text-align: left;
-    padding: 0;    
+    padding: 12%;
+    line-height: 1.3em;
 }
     a.logo h3{
     color: #FFA309;
@@ -354,10 +383,22 @@ footer p{
     #what_i_do img{
     margin-left: 35%;
 }
-    
+   #what_i_do p{
+	   text-align: left;
+   } 
 }
-//@media screen and (min-width: 960px) {
-  
+@media screen and (min-width: 960px) {
+  #header-image .row:first-child h2{
+	font-family: 'Antic', sans-serif;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    font-size: 2em; 
+    color: #fff;
+    text-align: left;
+    padding: 12%;
+    line-height: 1.3em;
+}
 }
 
 /* =============================================================================
@@ -421,7 +462,7 @@ nav a{
     
 }
 nav li:hover{
-  background-color: #00C79B;
+  background-color: #06a884;
 }    
 #menu-toggle{
     display: none;
@@ -438,7 +479,7 @@ a {
   text-decoration: none;
 }
 a.logo h3{
-    color: #FFA309;
+    color: #dcae1d;
     text-align: left;
     float: left;
     padding: 0 5%;
@@ -481,11 +522,8 @@ ul.social-icons {
 
 .fa-facebook {
 	padding:10px 14px 7px 14px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
@@ -495,11 +533,8 @@ ul.social-icons {
 
 .fa-twitter {
 	padding:10px 10px 7px 10px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
@@ -509,11 +544,8 @@ ul.social-icons {
 
 .fa-rss {
 	padding:10px 12px 7px 12px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
@@ -523,11 +555,8 @@ ul.social-icons {
 
 .fa-tumblr {
 	padding:10px 12px 7px 11px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
@@ -537,11 +566,8 @@ ul.social-icons {
 
 .fa-linkedin {
 	padding:10px 11px 8px 11px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
@@ -551,16 +577,23 @@ ul.social-icons {
 
 .fa-google-plus {
 	padding:10px 10px 7px 10px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+ -webkit-transition:.5s;
+ transition: .5s;
   	background-color: #322f30;
 }
 
 .fa-google-plus:hover {
 	background-color: #e25714;
+}
+.fa-instagram {
+	padding:10px 10px 7px 10px;
+ -webkit-transition:.5s;
+ transition: .5s;
+  	background-color: #322f30;
+}
+
+.fa-instagram:hover {
+	background-color:  #8a3ab9;
 }
 /* =============================================================================
   FONT STUFFS
@@ -582,7 +615,7 @@ p{
   FORM
 ============================================================================= */
 .contact_form{
-    background-color: #FFA309;
+    background-color: #dcae1d;
     padding: 5%;
 }
 .contact_form h3{
@@ -672,7 +705,7 @@ textarea:required:valid ~ label::before {
 input:required:focus ~ label::before, input:focus:invalid ~ label::before,
 textarea:required:focus ~ label::before,
 textarea:focus:invalid ~ label::before {
-  content: ':/';
+  content: '*';
   color: red;
   font-size: 1.5em;
 }
@@ -714,11 +747,9 @@ table {
 /* resets */
 
 a.btn,.btn {
-  //margin-right: 1em; /* remove this while use*/
-  //margin-bottom: 1em; /* remove this while use*/
     position:absolute;
-    top: 80%;
-    left: 30%;
+    top: 84%;
+    left: 29%;
 	display: inline-block;
 	outline: none;
 	*zoom: 1;
@@ -729,6 +760,7 @@ a.btn,.btn {
 	letter-spacing: 1px;
 	vertical-align: middle;
 	border: 1px solid;
+	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	box-sizing: border-box;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -777,6 +809,7 @@ a.btn,.btn {
     letter-spacing: 1px;
     vertical-align: middle;
     border: 1px solid;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     box-sizing: border-box;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -784,8 +817,6 @@ a.btn,.btn {
 }
 @media screen and (min-width: 768px) {
     a.btn,.btn {
-  //margin-right: 1em; /* remove this while use*/
-  //margin-bottom: 1em; /* remove this while use*/
     position:absolute;
     top: 25%;
     left: 50%;
@@ -799,6 +830,7 @@ a.btn,.btn {
 	letter-spacing: 1px;
 	vertical-align: middle;
 	border: 1px solid;
+	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	box-sizing: border-box;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
